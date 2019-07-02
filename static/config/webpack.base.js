@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin  = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 
 module.exports = {
     entry: {
@@ -52,6 +53,17 @@ module.exports = {
             filename: '[name].[contenthash:8].css'
         }),
         new OptimizeCssAssetsPlugin({}),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        // new HtmlWebpackExternalsPlugin({
+        //     externals: [{
+        //         module: 'react',
+        //         entry: 'https://lib.baomitu.com/react/16.8.6/umd/react.development.js',
+        //         global: 'React'
+        //     }, {
+        //         module: 'react-dom',
+        //         entry: 'https://lib.baomitu.com/react-dom/16.8.6/umd/react-dom.development.js',
+        //         global: 'ReactDOM'
+        //     }]
+        // })
     ]
 }
