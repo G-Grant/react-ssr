@@ -11,7 +11,7 @@ export default class Main extends Component{
         return (
             <div>
                 <Input />
-                <Button text="新增" />
+                <Button text="add" />
                 <Search />
                 <img src={jpeg} />
             </div>

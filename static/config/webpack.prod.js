@@ -6,19 +6,13 @@ module.exports = merge({
     mode: 'production',
     optimization: {
         splitChunks: {
+            minSize: 0,
             cacheGroups: {
-                vendor:{
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendor',
-                    minChunks: 1,
+                commons: {
+                    name: 'commons',
+                    minChunks: 2,
                     chunks: 'all'
-                },
-                // lodash: {
-                //     test: /lodash/,
-                //     name: 'lodash',
-                //     minChunks: 1,
-                //     chunks: 'initial'
-                // }
+                }
             }
         }
     },
