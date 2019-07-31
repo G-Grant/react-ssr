@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const path = require('path');
-const SSR = require('../dist/index-server.js').default;
+const SSR = require('./index-server.js').default;
 const template = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf-8');
 const { renderToString } = require('react-dom/server');
 
