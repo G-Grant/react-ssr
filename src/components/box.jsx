@@ -10,9 +10,23 @@ export default class Box extends React.Component{
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(){
+    componentDidMount(){
+        console.log('componentDidMount');
+        document.addEventListener('click', this.handleClickDocument)
+    }
+
+    componentWillUnmount(){
+        console.log('componentWillUnmount')
+        document.removeEventListener('click', this.handleClickDocument)
+    }
+
+    handleClick = () => {
         this.node.classList.add('blue');
         console.log('我已经是蓝色了');
+    }
+
+    handleClickDocument = ()=>{
+        this.node.classList.add('yellow');
     }
 
     render(){
